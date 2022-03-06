@@ -1,0 +1,26 @@
+00001000 Starting Address
+Assembler used: EASy68K Editor/Assembler v4.1.1
+Created On: 6/26/2021 3:36:03 AM
+
+00001000                             1          ORG     $1000
+00001000  307C 2000                  2  START   MOVE    #$2000,A0
+00001004  103C 0008                  3          MOVE.B  #$08,D0
+00001008  7200                       4          MOVE.L  #$0,D1
+0000100A  D218                       5  LOOP    ADD.B   (A0)+,D1
+0000100C  5300                       6          SUB.B   #$01,D0
+0000100E  66FA                       7          BNE     LOOP 
+00001010  E649                       8          LSR     #$03,D1       ;LOGICAL SHIFT RIGHT BY 3 PLACES
+00001012  11C1 2050                  9          MOVE.B  D1, $2050
+00001016  4E72 2700                 10          STOP     #$2700
+0000101A                            11          
+0000101A                            12          END     START
+
+No errors detected
+No warnings generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+LOOP                100A
+START               1000

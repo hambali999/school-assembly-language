@@ -1,0 +1,24 @@
+00000100 Starting Address
+Assembler used: EASy68K Editor/Assembler v4.1.1
+Created On: 5/15/2021 6:45:37 AM
+
+00000100                             1          ORG     $000100
+00000100                             2          
+00000100  207C 00001001              3  START   MOVE.L  #$1001,A0
+00000106  103C 0012                  4          MOVE.B  #$12,D0
+0000010A  D018                       5          ADD.B   (A0)+,D0
+0000010C  2238 1000                  6          MOVE.L  $1000,D1
+00000110  5301                       7          SUB.B   #$1,D1
+00000112  21C1 1000                  8          MOVE.L  D1,$1000
+00000116  4E72 2700                  9          STOP    #$2700
+0000011A                            10          
+0000011A                            11          END     START
+
+No errors detected
+No warnings generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+START               100
